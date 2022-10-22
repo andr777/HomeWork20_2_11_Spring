@@ -24,6 +24,5 @@ public class Item {
         return priceItem;
     }
 
-    public void add(Item item) {
-    }
+
 }

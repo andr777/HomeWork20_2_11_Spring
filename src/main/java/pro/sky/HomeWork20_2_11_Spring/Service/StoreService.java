@@ -36,17 +36,17 @@ public class StoreService {
 
 
     public void add(List<Integer> ids) {
+            basket.addItemToList(
+                    ids.stream()
+                            .filter((s)-> s.intValue() <= this.items.size() )
+                            .map(items::get)
+                            .collect(Collectors.toList())
+                               );
 
-         basket.addItemToList(
-                 ids.stream()
-                         .map(items::get)
-                         .collect(Collectors.toList())
-
-        );
     }
 
-    public List<Map.Entry<Integer, Item>> list() {
+    public List list() {
         return items.entrySet().stream()
-                                .collect(Collectors.toList());
+                .collect(Collectors.toList());
     }
 }

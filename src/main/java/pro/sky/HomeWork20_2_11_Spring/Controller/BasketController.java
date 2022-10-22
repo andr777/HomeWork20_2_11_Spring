@@ -21,19 +21,16 @@ public class BasketController {
 
     @GetMapping("/add")
     public void add(@RequestParam("id") List<Integer> ids){
-
          storeService.add(ids);
     }
 
     @GetMapping("/get")
     public List get(){
-
         return storeService.get();
     }
 
     @GetMapping("/list")
     public List list(){
-
         return storeService.list();
     }
 }
